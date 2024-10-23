@@ -42,4 +42,30 @@ class Viral {
         current.next = newNode;
     }
     
+    public void deleteFirst() {
+        if (head == null) {
+            System.out.println("Belum ada manusianya");
+            return;
+        }
+        head = head.next;
+    }
+    
+    public void deleteLast() {
+        if (head == null) {
+            System.out.println("Belum ada manusianya");
+            return;
+        }
+        
+        if (head.next == null) {
+            head = null;
+            return;
+        }
+        
+        Easy current = head;
+        while (current.next.next != null) {
+            current = current.next;
+        }
+        current.next = null;
+    }
+
 }
